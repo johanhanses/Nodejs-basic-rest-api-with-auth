@@ -4,6 +4,7 @@ const Task = require("../models/task");
 const auth = require("../middleware/auth");
 
 /*
+ * Create a new task for the logged in user
  * POST /tasks
  */
 router.post("/tasks", auth, async (req, res, next) => {
@@ -11,7 +12,7 @@ router.post("/tasks", auth, async (req, res, next) => {
 
     try {
         await task.save();
-        res.status(200).send(task);
+        res.status(201).send(task);
     } catch (e) {
         res.status(400).send(e);
     }

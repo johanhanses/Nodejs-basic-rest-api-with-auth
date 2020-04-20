@@ -5,7 +5,11 @@
     "main": "index.js",
     "scripts": {
         "start": "node src/index.js",
-        "dev": "env-cmd -f ./config/dev.env nodemon src/index.js"
+        "dev": "env-cmd -f ./config/dev.env nodemon src/index.js",
+        "test": "env-cmd -f ./config/test.env jest --runInBand"
+    },
+    "jest": {
+        "testEnvironment": "node"
     },
     "author": "Johan Hanses",
     "license": "MIT",
@@ -22,6 +26,8 @@
     },
     "devDependencies": {
         "env-cmd": "^10.1.0",
+        "jest": "^25.3.0",
+        "supertest": "^4.0.2",
         "nodemon": "^2.0.2"
     }
 }
